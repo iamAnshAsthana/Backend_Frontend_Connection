@@ -25,7 +25,7 @@ app.use(cors({
 app.post('/users', (req, res) => {
   let {name, description, price, status} = req.body;
   conn.query(`INSERT INTO users(name, description, price, status) VALUES('${name}', '${description}', '${price}', '${status}')`);
-  res.status(200).json("Data Saved Successfully")
+  res.status(200).json({message: "Data Saved Successfully"})
 });
 
 app.get('/', (req, res) => {
